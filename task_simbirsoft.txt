@@ -5,7 +5,7 @@
 Далее создание Dockerfile. 
 Прописал базовый образ. С помощью COPY копировал приложение в образ. Далее установил зависимости с помощью pip install. Далее с помощью инструкции CMD добавил запуск приложения.
 1. Билд образа
-docker build -f Dockerfile -t flaskex.app .
+docker build -f Dockerfile -t flaskex:app .
 2. Запуск контейнера
 docker run --name flaskex-app -p 5000:5000 -d flaskex:app
 
