@@ -1,0 +1,12 @@
+Использовал удаленный репозиторий Flaskex, используя команду  git clone.
+Запуск приложения через python3 app.py. 
+При запуске появилась ошибка "AttributeError: module 'wtforms.validators' has no attribute 'required'. Исправил ее тем, что заменил строчки в файле forms.py на input_required() для проверки, что данное поле формы не является пустым.
+
+Далее создание Dockerfile. 
+Прописал базовый образ. С помощью COPY копировал приложение в образ. Далее установил зависимости с помощью pip install. Далее с помощью инструкции CMD добавил запуск приложения.
+1. Билд образа
+docker build -f Dockerfile -t flaskex.app .
+2. Запуск контейнера
+docker run --name flaskex-app -p 5000:5000 -d flaskex:app
+
+После чего написал файл docker-compose и запустил командой docker-compose up
